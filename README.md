@@ -1,1 +1,1 @@
-"# Typescript-works" 
+# Typescript-works
