@@ -89,7 +89,7 @@ interface AudioBook extends EBook {
 }
 
 const book: AudioBook = {
-    name: 'Code dummys',
+    name: 'Code dummy',
     price: 1999,
     fileSize: 300,
     format: 'pdf',
@@ -132,12 +132,13 @@ const getFirstThree = (x: string | number[]) => {
 console.log(getFirstThree([1, 2, 3, 2, 5, 5]))
 
 
-// Generics
+/** Generics */
 const logString = (arg: string) => {
     console.log(arg);
     return arg;
 }
 console.log(logString('abc'))
+
 
 
 const logArray = (arg: any[]) => {
@@ -147,8 +148,120 @@ const logArray = (arg: any[]) => {
 console.log(logArray(['🍎', '🍏', '🍌', '🍉']))
 
 
+
 const logAnything = <T>(arg: T): T => {
     console.log(arg)
     return arg
 }
-console.log(logAnything([1, 'two']))
+console.log(logAnything([1, 'a']))
+
+
+
+interface HasAge {
+    age: number;
+}
+
+// function getOldest(people: HasAge[]): HasAge {
+//     return people.sort((a, b) => b.age - a.age)[0];
+// }
+function getOldest<T extends HasAge>(people: T[]): T {
+    return people.sort((a, b) => b.age - a.age)[0];
+}
+
+const people: HasAge[] = [
+    { age: 30 },
+    { age: 40 },
+    { age: 50 },
+]
+console.log(getOldest(people))
+
+/** Assertion */
+
+interface Player {
+    name: string;
+    age: number;
+}
+const player: Player[] = [
+    { name: 'John', age: 28 },
+    { name: 'Joe', age: 35 },
+    { name: 'Rone', age: 40 },
+]
+
+
+// forcefully asserting return type as Player
+const person1 = getOldest(player) as Player
+console.log(person1)
+
+const person2 = getOldest(people)
+console.log(person2)
+
+const person3 = getOldest(player)
+console.log(person3)
+
+
+interface IPost {
+    title: string;
+    id: number;
+    description: string;
+}
+
+interface IUser {
+    name: string;
+    age: number;
+    description: string;
+}
+
+const fetchPostData = async (path: string): Promise<IPost[]> => {
+    const response = await fetch(`http://example.com/${path}`)
+    return response.json()
+}
+
+(async () => {
+    const posts = await fetchPostData('posts');
+    posts[0]
+})();
+
+
+const fetchData = async <ResultType>(path: string): Promise<ResultType> => {
+    const response = await fetch(`http://example.com/${path}`)
+    return response.json()
+}
+
+(async () => {
+    const posts = await fetchData<IUser[]>('posts');
+})();
+
+
+// Structural typing or duck typing
+interface ICredentials {
+    username: string;
+    password: string;
+    isAdmin?: boolean;
+}
+
+const userLogin = (credentials: ICredentials) => {
+    console.log(credentials);
+    return true;
+}
+
+const user1: ICredentials = {
+    username: 'sandy',
+    password: 'secret',
+    isAdmin: true,
+}
+
+userLogin(user1);
+
+interface IAuth {
+    username: string;
+    password: string;
+    login(username: string, password: string): void;
+}
+
+const auth: IAuth = {
+    username: 'sandy001',
+    password: 'secret',
+    login(username: string, password: string) {
+
+    }
+}
