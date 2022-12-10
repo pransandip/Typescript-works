@@ -27,9 +27,13 @@ const heroes = ['Batman', 'superman', 'spiderman']
 console.log(heroes.map((o): string => `hero is ${o}`))
 
 
+function handleError(err: unknown) {
+    if (typeof err === 'string') {
+        throw new Error(err)
+    } else if (err instanceof Error) {
+        throw new Error(err.message)
+    }
 
-function handleError(err: string): never {
-    throw new Error(err)
 }
 
 try {
@@ -37,8 +41,8 @@ try {
     // b;
     console.log(a)
 
-} catch (error) {
-    handleError(error)
+} catch (err) {
+    handleError(err)
 }
 
 
