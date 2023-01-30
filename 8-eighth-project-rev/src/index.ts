@@ -6,7 +6,7 @@ console.log(calculate(num1, 1));
 
 /*---------BREAK-----------*/
 
-const getTotal = (numbers: number[]) => {
+const getTotal = (numbers: number[]): number => {
   return numbers.reduce((_, i) => _ + i, 0);
 };
 console.log(getTotal([3, 2, 1]));
