@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@faker-js/faker": "^7.6.0",
+    "@types/google.maps": "^3.51.0",
     "axios": "^1.2.5",
     "parcel": "^2.8.3"
   }

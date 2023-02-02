@@ -1,0 +1,9 @@
+In this example, we define a RandomImageGenerator class that takes an array of image URLs as input. The class has a method getRandomImage that returns a random image from the list of images.
+
+We then create an instance of RandomImageGenerator and pass an array of image URLs to it.
+
+We also get a reference to a div element with the ID image-container using document.getElementById and assign it to the imageContainer variable.
+
+Finally, we create an updateImage function that generates a random image using generator.getRandomImage(), creates an img element, sets its src attribute to the generated image, clears the contents of imageContainer, and appends the image element to it.
+
+We use setInterval to call the updateImage function every second, which will update the image in the imageContainer every second.
