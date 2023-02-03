@@ -10,3 +10,7 @@ select,
 input {
   color: #333;
 }
+
+#map {
+  position: unset !important;
+}
