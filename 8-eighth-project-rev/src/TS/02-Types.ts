@@ -1,7 +1,8 @@
-/** Type: It is a Easy way to refer to the different
- *  properties + functions that a value has. In
- *  addition every value, you can say anything that
- *  Is assign to variable has a type.
+/**
+ * * Type: It is a Easy way to refer to the different
+ * * properties + functions that a "value" has. In
+ * * addition you can say, anything that
+ * * Is assign to variable has a type.
  */
 
 const today = new Date();

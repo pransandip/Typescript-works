@@ -49,6 +49,7 @@ for (let i = 0; i < words.length; i++) {
     foundWord = true;
   }
 }
+// console.log(foundWord);
 
 // 3.) Variable whose type cannot be inferred correctly
 let numbers = [-10, -1, 12];
