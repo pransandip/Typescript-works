@@ -33,7 +33,7 @@ function getDbId(id: number | string): number | string {
 
 /*---------BREAK-----------*/
 
-const data3: string[] | number[] = [123, 235];
+const data3: string[] | number[] = [123, 235]; // * whatever value u assign first takes as type
 data3.push(1555);
 console.log(data3);
 
