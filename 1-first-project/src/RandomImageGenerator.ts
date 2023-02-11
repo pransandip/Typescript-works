@@ -12,10 +12,10 @@ class RandomImageGenerator {
 }
 
 const generator = new RandomImageGenerator([
-  "https://example.com/image1.jpg",
-  "https://example.com/image2.jpg",
-  "https://example.com/image3.jpg",
-  "https://example.com/image4.jpg",
+  "https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/javascript/javascript.png",
+  "https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/react/react.png",
+  "https://www.vectorlogo.zone/logos/pocoo_flask/pocoo_flask-icon.svg",
+  "https://github.com/pransandip/pransandip/blob/main/logos/numpy_github.png?raw=true",
 ]);
 
 const imageContainer = document.getElementById(

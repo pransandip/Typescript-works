@@ -19,7 +19,10 @@ type User = {
 const persons: User = {
   name: "Sandy Ry",
   age: 28,
+  address: "Kolkata 700040",
 };
+
+console.log(persons);
 
 function login(userData: User): User {
   return userData;
@@ -29,6 +32,8 @@ console.log(login({ name: "Sandy Ry", age: 28 }));
 /** primitives */
 type ID = number | string;
 const userId: ID = 123;
+
+console.log(userId);
 
 /** Interfaces (Interfaces uses in object) */
 interface Transaction {
@@ -61,7 +66,9 @@ const bankAccount: BankAccount = {
   transactions: [transaction1, transaction2],
 };
 
-// Extend
+console.log(bankAccount);
+
+// * Extends
 interface Book {
   name: string;
   price: number;
@@ -90,7 +97,7 @@ const book: AudioBook = {
   duration: 5,
 };
 
-// merging
+// * merging
 interface NoteBook {
   name: string;
   price: number;
@@ -117,7 +124,7 @@ function printId(id: UID) {
 }
 printId(1235);
 
-const getFirstThree = (x: string | number[]) => {
+const getFirstThree = (x: string | number[]): string | number[] => {
   return x.slice(0, 3);
 };
 console.log(getFirstThree([1, 2, 3, 2, 5, 5]));
@@ -161,20 +168,20 @@ interface Player {
   name: string;
   age: number;
 }
-const player: Player[] = [
+const player1: Player[] = [
   { name: "John", age: 28 },
   { name: "Joe", age: 35 },
-  { name: "Rone", age: 40 },
+  { name: "Rona", age: 40 },
 ];
 
 // forcefully asserting return type as Player
-const person1 = getOldest(player) as Player;
+const person1 = getOldest(player1) as Player;
 console.log(person1);
 
 const person2 = getOldest(people);
 console.log(person2);
 
-const person3 = getOldest(player);
+const person3 = getOldest(player1);
 console.log(person3);
 
 interface IPost {

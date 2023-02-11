@@ -45,6 +45,6 @@ console.log(data4);
 
 /*---------BREAK-----------*/
 
-let seatAllotement: "aisle" | "middle" | "window";
-seatAllotement = "window";
-console.log(seatAllotement);
+let seatAllotment: "aisle" | "middle" | "window";
+seatAllotment = "middle";
+console.log(seatAllotment);

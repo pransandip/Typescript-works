@@ -9,8 +9,8 @@ console.log(userID.toFixed());
 const isLoggedIn: boolean = !!!true;
 console.log(isLoggedIn.valueOf());
 
-/*----------BREAK-----------*/
 
+/*----------BREAK-----------*/
 let hero: string;
 
 function getHero() {
@@ -21,7 +21,6 @@ hero = getHero();
 console.log(hero);
 
 /*----------BREAK-----------*/
-
 let logIn = (name: string, email: string, isPaid: boolean = false) => {
   console.log(name);
   console.log(email);
@@ -30,7 +29,6 @@ let logIn = (name: string, email: string, isPaid: boolean = false) => {
 logIn("s", "s@s.com");
 
 /*----------BREAK-----------*/
-
 // * never: some functions never return a value
 function fail(msg: string): never {
   throw new Error(msg);
