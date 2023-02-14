@@ -41,3 +41,25 @@ console.log(srUser);
 console.log(srUser.getCoupon("srCoupon"));
 console.log(srUser.startTrail());
 console.log(srUser.finishTrail());
+
+/*---------BREAK-----------*/
+
+interface IFuncTest {
+  name: string;
+  color: string;
+  about(name: string, color: string): { name: string; color: string };
+}
+
+const printDetails = (info: IFuncTest) => {
+  console.log(info.name);
+  const res = info.about(info.name, info.color);
+  console.log(res);
+};
+
+printDetails({
+  name: "Sandy roy",
+  color: "#FF3265",
+  about(name: "", color: "") {
+    return { name, color };
+  },
+});

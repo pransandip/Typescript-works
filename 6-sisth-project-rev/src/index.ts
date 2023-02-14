@@ -208,5 +208,3 @@ async function fetchDataAll(): Promise<{}> {
 fetchDataAll().then((result) => {
   console.log(result);
 });
-
-/*---------BREAK-----------*/

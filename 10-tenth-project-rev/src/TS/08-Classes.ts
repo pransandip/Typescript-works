@@ -46,3 +46,7 @@ console.log(flt);
 console.log(flt.getSeat);
 console.log((flt.setSeat = 2));
 console.log(flt);
+
+// * object instanceof constructor
+console.log(flt instanceof Flight);
+console.log(flt instanceof Object);
