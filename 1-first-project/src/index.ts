@@ -21,7 +21,7 @@ const persons: User = {
   age: 28,
   address: "Kolkata 700040",
 };
-
+delete persons["address"];
 console.log(persons);
 
 function login(userData: User): User {
@@ -97,6 +97,10 @@ const book: AudioBook = {
   duration: 5,
 };
 
+const { name: name1, price }: AudioBook = book;
+console.log(name1);
+console.log(price);
+
 // * merging
 interface NoteBook {
   name: string;
@@ -123,11 +127,12 @@ function printId(id: UID) {
   }
 }
 printId(1235);
+printId("abc");
 
 const getFirstThree = (x: string | number[]): string | number[] => {
   return x.slice(0, 3);
 };
-console.log(getFirstThree([1, 2, 3, 2, 5, 5]));
+console.log(getFirstThree([1, 2, 3, 2, 5, 5] || "abcd"));
 
 /** Generics */
 const logString = (arg: string) => {
@@ -136,9 +141,10 @@ const logString = (arg: string) => {
 };
 console.log(logString("abc"));
 
-const logArray = (arg: any[]) => {
+const logArray = (arg: unknown[]) => {
   console.log(arg);
-  return arg;
+  const newArr: string[] = arg;
+  return arg.slice(0, 2);
 };
 console.log(logArray(["🍎", "🍏", "🍌", "🍉"]));
 
@@ -168,20 +174,20 @@ interface Player {
   name: string;
   age: number;
 }
-const player1: Player[] = [
+const player: Player[] = [
   { name: "John", age: 28 },
   { name: "Joe", age: 35 },
-  { name: "Rona", age: 40 },
+  { name: "Rone", age: 40 },
 ];
 
 // forcefully asserting return type as Player
-const person1 = getOldest(player1) as Player;
+const person1 = getOldest(player) as Player;
 console.log(person1);
 
 const person2 = getOldest(people);
 console.log(person2);
 
-const person3 = getOldest(player1);
+const person3 = getOldest(player);
 console.log(person3);
 
 interface IPost {

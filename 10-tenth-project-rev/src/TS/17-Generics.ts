@@ -3,6 +3,23 @@
 //   return res;
 // };
 
+/*---------BREAK-----------*/
+
+// * T must extend {} which means pretty much anything except null and undefined.
+// * T can be a primitive though
+
+const getProduct = <T extends {}>(products: T[]): T[] => {
+  return products;
+};
+
+const temp0 = getProduct(["ann", 5, "8"]);
+console.log(temp0);
+
+/*---------BREAK-----------*/
+
+// * T must extend number which means it's only expect number.
+// * In this case generics won't work properly
+
 const getSearchProduct2 = <T extends number>(products: T[]): T[] | number[] => {
   const res = products.map((item) => item * 2);
   return res;
